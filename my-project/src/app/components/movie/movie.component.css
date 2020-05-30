@@ -1,0 +1,19 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    padding-right: 50px;
+}
+
+.movie-img {
+    width: 200px;
+    height: 300px;
+}
+
+.movie-heading {
+    font-size: 25px;
+    text-align: center;
+}
+
+img:hover {
+    cursor: pointer;
+}

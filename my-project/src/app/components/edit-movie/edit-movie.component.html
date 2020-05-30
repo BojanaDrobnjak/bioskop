@@ -1,0 +1,37 @@
+<form
+  class="example-form"
+  [formGroup]="editMovieForm"
+  #f="ngForm"
+  (ngSubmit)="editMovie(f)"
+>
+  <mat-form-field class="example-full-width">
+    <mat-label>Movie Title</mat-label>
+    <input
+      formControlName="title"
+      name="title"
+      matInput
+      placeholder="Enter movie title."
+    />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Movie Year</mat-label>
+    <input
+      formControlName="year"
+      name="year"
+      matInput
+      placeholder="Enter movie year."
+    />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Movie's banner image</mat-label>
+    <input
+      formControlName="imgUrl"
+      name="imgUrl"
+      matInput
+      placeholder="Enter url for banner image."
+    />
+  </mat-form-field>
+  <button type="submit">Add</button>
+</form>

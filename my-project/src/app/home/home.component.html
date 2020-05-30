@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="flex-div">
+    <app-movie
+      *ngFor="let movie of listOfMovies"
+      [id]="movie._id"
+      [title]="movie.title"
+      [year]="movie.year"
+      [imgUrl]="movie.imgUrl"
+    ></app-movie>
+  </div>
+</div>
+<button (click)="redirectToCreateMovie()" mat-raised-button color="primary">
+  Add new movie
+</button>

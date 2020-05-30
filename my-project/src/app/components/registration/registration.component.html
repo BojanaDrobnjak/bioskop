@@ -1,0 +1,89 @@
+<div class="registration-form">
+  <div class="form-container">
+    <div class="title-container">
+      <label> Please register </label>
+    </div>
+    <form class="example-form" [formGroup]="registrationForm">
+      <div class="example-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your email</mat-label>
+          <input
+            matInput
+            placeholder="pat@example.com"
+            [formControl]="email"
+            required
+          />
+          <mat-error *ngIf="email.invalid">Email is not valid.</mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input
+            matInput
+            placeholder="Username"
+            [formControl]="username"
+            required
+          />
+          <mat-error *ngIf="username.invalid">Username is not valid.</mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input
+            matInput
+            [type]="hidePassword ? 'password' : 'text'"
+            [formControl]="password"
+            required
+          />
+          <label
+            mat-icon-button
+            matSuffix
+            (click)="hidePassword = !hidePassword"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hidePassword"
+          >
+            <mat-icon>{{
+              hidePassword ? "visibility_off" : "visibility"
+            }}</mat-icon>
+          </label>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-error *ngIf="repeatedPassword.hasError('passwordsMatch')"
+            >Password doesn't match.</mat-error
+          >
+          <mat-label>Repeat your password</mat-label>
+          <input
+            matInput
+            [type]="hideRepeatedPassword ? 'password' : 'text'"
+            [formControl]="repeatedPassword"
+            required
+          />
+          <label
+            mat-icon-button
+            matSuffix
+            (click)="hideRepeatedPassword = !hideRepeatedPassword"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hideRepeatedPassword"
+          >
+            <mat-icon>{{
+              hideRepeatedPassword ? "visibility_off" : "visibility"
+            }}</mat-icon>
+          </label>
+        </mat-form-field>
+        <br />
+        <div class="register-button-container">
+          <button
+            (click)="submitForm()"
+            class="register-button"
+            type="submit"
+            mat-raised-button
+            color="primary"
+          >
+            Register
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

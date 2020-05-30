@@ -1,0 +1,14 @@
+<div class="card">
+  <ng-container *ngIf="movie">
+    <label class="movie-heading">{{ movie.title }}</label
+    ><br />
+    <img class="movie-img" src="{{ movie.imgUrl }}" /><br />
+    <label>{{ movie.year }}.</label><br />
+    <button (click)="editMovie()" mat-raised-button color="primary">
+      Edit
+    </button>
+    <button (click)="deleteMovieById()" mat-raised-button color="warn">
+      Delete
+    </button>
+  </ng-container>
+</div>

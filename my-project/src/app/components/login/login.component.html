@@ -1,0 +1,58 @@
+<div class="registration-form">
+  <div class="form-container">
+    <div class="title-container">
+      <label> Login </label>
+    </div>
+    <form class="example-form" [formGroup]="loginForm">
+      <div class="example-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input
+            matInput
+            placeholder="Username"
+            [formControl]="username"
+            required
+          />
+          <mat-error *ngIf="username.invalid">Username is not valid.</mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input
+            matInput
+            [type]="hidePassword ? 'password' : 'text'"
+            [formControl]="password"
+            required
+          />
+          <label
+            mat-icon-button
+            matSuffix
+            (click)="hidePassword = !hidePassword"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hidePassword"
+          >
+            <mat-icon>{{
+              hidePassword ? "visibility_off" : "visibility"
+            }}</mat-icon>
+          </label>
+        </mat-form-field>
+        <br />
+        <div class="register-button-container">
+          <button
+            (click)="submitForm()"
+            class="register-button"
+            type="submit"
+            mat-raised-button
+            color="primary"
+          >
+            Login
+          </button>
+        </div>
+        <label class="register-here"
+          >Don't have an account? Register
+          <label (click)="redirectToRegister()" class="on-hover here">here</label></label
+        >
+      </div>
+    </form>
+  </div>
+</div>
