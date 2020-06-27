@@ -15,40 +15,40 @@
 
       <!-- username Column -->
       <ng-container matColumnDef="username">
-        <th mat-header-cell *matHeaderCellDef>Username</th>
+        <th mat-header-cell *matHeaderCellDef>Korisničko ime</th>
         <td mat-cell *matCellDef="let element">{{ element.username }}</td>
       </ng-container>
 
       <!-- verified Column -->
       <ng-container matColumnDef="verified">
-        <th mat-header-cell *matHeaderCellDef>Verified</th>
+        <th mat-header-cell *matHeaderCellDef>Verifikovan</th>
         <td mat-cell *matCellDef="let element">{{ element.verified }}</td>
       </ng-container>
 
       <!-- verify Column -->
       <ng-container matColumnDef="verify">
-        <th mat-header-cell *matHeaderCellDef>Verify User</th>
+        <th mat-header-cell *matHeaderCellDef>Verifikuj korisnika</th>
         <td mat-cell *matCellDef="let element">
           <button
             (click)="verifyUser(element.verificationCode)"
             mat-raised-button
             color="accent"
           >
-            Verify
+            Verifikuj
           </button>
         </td>
       </ng-container>
 
       <!-- Delete Column -->
       <ng-container matColumnDef="delete">
-        <th mat-header-cell *matHeaderCellDef>Delete User</th>
+        <th mat-header-cell *matHeaderCellDef>Obriši korisnika</th>
         <td mat-cell *matCellDef="let element">
           <button
             (click)="deleteUser(element._id)"
             mat-raised-button
             color="warn"
           >
-            Delete
+            Obriši
           </button>
         </td>
       </ng-container>

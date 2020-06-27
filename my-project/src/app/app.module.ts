@@ -32,7 +32,7 @@ export function tokenGetter() {
 }
 
 const appRoutes: Routes = [
-  { path: "", component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: "", component: HomeComponent, canActivate: [AuthGuard] },
   { path: "home", component: HomeComponent, canActivate: [AuthGuard] },
   { path: "new-movie", component: NewMovieComponent, canActivate: [AuthGuard] },
   {
@@ -45,11 +45,12 @@ const appRoutes: Routes = [
     component: EditMovieComponent,
     canActivate: [AuthGuard]
   },
-  //dobra praksa
+
   { path: "registration", component: RegistrationComponent },
   { path: "register", component: RegistrationComponent },
   { path: "login", component: LoginComponent },
-  { path: "confirm-account/:id", component: ConfirmAccountComponent }
+  { path: "confirm-account/:id", component: ConfirmAccountComponent },
+  { path: "dashboard", component: DashboardComponent }
 ];
 
 @NgModule({

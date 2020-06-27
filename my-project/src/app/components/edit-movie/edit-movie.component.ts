@@ -75,7 +75,7 @@ export class EditMovieComponent implements OnInit {
   updateMovie(id: string, movie: MovieModel) {
     this.http.updateMovie(id, movie).subscribe(
       data => {
-        alert("success");
+        alert("Uspešno ste izmenili film!");
         this.router.navigate(["home"]);
       },
       error => {

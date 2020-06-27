@@ -1,23 +1,23 @@
 <div class="registration-form">
   <div class="form-container">
     <div class="title-container">
-      <label> Login </label>
+      <label> Prijava </label>
     </div>
     <form class="example-form" [formGroup]="loginForm">
       <div class="example-container">
         <mat-form-field appearance="fill">
-          <mat-label>Username</mat-label>
+          <mat-label>Korisnicko ime</mat-label>
           <input
             matInput
-            placeholder="Username"
+            placeholder="Korisnicko ime"
             [formControl]="username"
             required
           />
-          <mat-error *ngIf="username.invalid">Username is not valid.</mat-error>
+          <mat-error *ngIf="username.invalid">Korisnicko ime nije validno.</mat-error>
         </mat-form-field>
         <br />
         <mat-form-field appearance="fill">
-          <mat-label>Enter your password</mat-label>
+          <mat-label>Lozinka</mat-label>
           <input
             matInput
             [type]="hidePassword ? 'password' : 'text'"
@@ -45,12 +45,12 @@
             mat-raised-button
             color="primary"
           >
-            Login
+            Prijava
           </button>
         </div>
         <label class="register-here"
-          >Don't have an account? Register
-          <label (click)="redirectToRegister()" class="on-hover here">here</label></label
+          >Nemas nalog? Registruj se
+          <label (click)="redirectToRegister()" class="on-hover here">ovde</label></label
         >
       </div>
     </form>

@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         result => {
-          alert("you logged in");
+          alert("Uspesno ste se ulogovali!");
           this.router.navigate(["home"]);
         },
         err => console.log("Could not authenticate")

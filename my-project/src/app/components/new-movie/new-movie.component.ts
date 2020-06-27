@@ -3,6 +3,7 @@ import { FormGroup } from "@angular/forms";
 import { FormControl, Validators } from "@angular/forms";
 import { MovieService } from "src/app/services/movie.service";
 import { MovieModel } from "src/app/model/movie.model";
+import { Router } from "@angular/router";
 import { HttpErrorHandlerService } from "src/app/services/http-error-handler.service";
 @Component({
   selector: "app-new-movie",
@@ -14,7 +15,8 @@ export class NewMovieComponent implements OnInit {
 
   constructor(
     private http: MovieService,
-    private httpErrorHandle: HttpErrorHandlerService
+    private httpErrorHandle: HttpErrorHandlerService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -38,8 +40,8 @@ export class NewMovieComponent implements OnInit {
     this.http.insertMovie(movie).subscribe(
       data => {
         console.log(data, "data");
-        //ispisati poruku korisniku
-        //i zatim ga redirektovati na (ili refresh, sta god)
+        alert("Uspesno ste dodali film!");
+          this.router.navigate(["home"]);
       },
       error => {
         this.httpErrorHandle.handleError(error);
